@@ -52,7 +52,7 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save(Book book)
+        public IActionResult Save([FromBody]Book book)
         {
             try
             {

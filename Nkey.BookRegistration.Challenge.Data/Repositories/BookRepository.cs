@@ -19,7 +19,7 @@ namespace Nkey.BookRegistration.Challenge.Data.Repositories
         public List<Book> GetAll()
         {
             if (_context.Books.Any())
-                return _context.Books.ToList();
+                return _context.Books.OrderBy(x => x.Name).ToList();
 
             throw new Exception("Não há livros cadastrados.");
         }

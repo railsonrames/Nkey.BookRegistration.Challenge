@@ -1,0 +1,47 @@
+﻿@model Nkey.BookRegistration.Challenge.App.Models.BookModel
+
+@{ ViewData["Title"] = "New Books Registry"; }
+
+<div class="jumbotron">
+    <h1 class="display-4">New Books Registry</h1>
+    <p class="lead">Cadastre um novo registro de livro.</p>
+    <form>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Code" class="control-label"></label>
+            <input asp-for="Code" class="form-control" />
+            <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Author" class="control-label"></label>
+            <input asp-for="Author" class="form-control" />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Isbn" class="control-label"></label>
+            <input asp-for="Isbn" class="form-control" />
+            <span asp-validation-for="Isbn" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ReleaseYear" class="control-label"></label>
+            <input asp-for="ReleaseYear" class="form-control" />
+            <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" id="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div id="entryPoint"></div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/Books/new.js"></script>
+}
