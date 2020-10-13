@@ -1,18 +1,10 @@
 ﻿$(document).ready(function () {
-    $('#getDataButton').on('click', function () {
         $.ajax({
             type: "GET",
             url: "http://localhost:5000/books",
-            sucess: function (data) {
-                var result = $.parseJSON(data);
-                alert(result);
-                var obj = JSON.parse(data);
-                for (var i = 0; i < obj.length; i++) {
-                    console.log(obj[i]);
-                }
-                //$("#entryPoint").html(setDataTable(data));
+            success: function (data) {
+                $("#entryPoint").html(setDataTable(data));
             }
-        });
     });
 });
 
