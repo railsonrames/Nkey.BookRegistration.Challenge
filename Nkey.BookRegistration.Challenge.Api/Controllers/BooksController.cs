@@ -51,6 +51,22 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
             return Ok(list);
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            Book registry;
+            try
+            {
+                registry = _service.GetById(id);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(404, e.Message);
+            }
+
+            return Ok(registry);
+        }
+
         [HttpPost]
         public JsonResult Save([FromBody]Book book)
         {
@@ -73,7 +89,7 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(Book book)
+        public JsonResult Update([FromBody]Book book)
         {
             try
             {
@@ -81,10 +97,15 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(404, e.Message);
+                return new JsonResult(e.Message)
+                {
+                    StatusCode = 404
+                };
             }
-
-            return StatusCode(204, "Updated.");
+            return new JsonResult("Livro atualizado com sucesso.")
+            {
+                StatusCode = 204
+            };
         }
 
         [HttpDelete("{id}")]
@@ -99,7 +120,7 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
                 return StatusCode(404, e.Message);
             }
 
-            return StatusCode(204, "Deleted.");
+            return StatusCode(204, "Livro excluído com sucesso.");
         }
     }
 }

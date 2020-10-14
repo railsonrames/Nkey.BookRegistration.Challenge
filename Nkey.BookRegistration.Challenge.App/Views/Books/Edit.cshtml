@@ -1,8 +1,8 @@
-﻿@{ ViewData["Title"] = "New Book Registry"; }
+﻿@{ ViewData["Title"] = "Edit Book Registry"; }
 
 <div class="jumbotron">
-    <h1 class="display-4">New Book Registry</h1>
-    <p class="lead">Cadastre um novo registro de livro.</p>
+    <h1 class="display-4">Edit Book Registry</h1>
+    <p class="lead">Edite os dados do livro.</p>
     <div id="entryPoint"></div>
     <form>
         <div class="form-group">
@@ -19,14 +19,14 @@
         </div>
         <div class="form-group">
             <label for="isbn" class="control-label">ISBN</label>
-            <input id="isbn" name="isbn" class="form-control" />
+            <input id="isbn" name="isbn" class="form-control" disabled />
         </div>
         <div class="form-group">
             <label for="releaseYear" class="control-label">Release Year</label>
             <input id="releaseYear" name="releaseYear" class="form-control" />
         </div>
         <div class="form-group">
-            <input type="submit" id="submit" value="Save" class="btn btn-primary" />
+            <input type="submit" id="submit" value="Update" class="btn btn-primary" />
         </div>
     </form>
 </div>
@@ -35,5 +35,6 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/Books/new.js"></script>
+    <script src="~/js/Books/byid.js"></script>
+    <script src="~/js/Books/edit.js"></script>
 }

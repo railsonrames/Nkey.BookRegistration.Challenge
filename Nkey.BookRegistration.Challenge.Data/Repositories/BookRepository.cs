@@ -38,6 +38,15 @@ namespace Nkey.BookRegistration.Challenge.Data.Repositories
                 .ToList();
         }
 
+        public Book GetById(Guid id)
+        {
+            var bookRecovered = _context.Books.FirstOrDefault(x => x.Id == id);
+
+            if (bookRecovered == null) throw new Exception("Livro não encontrado.");
+
+            return bookRecovered;
+        }
+
         public void Save(Book book)
         {
             var bookRecovered = _context.Books

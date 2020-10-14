@@ -3,6 +3,57 @@
 <div class="jumbotron">
     <h1 class="display-4">Book List</h1>
     <p class="lead">Este é um projeto dividido em front e backend, organizado para atender aos requisitos do desafio técnico da Nkey.</p>
+    <p>
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#filterForm" aria-expanded="false" aria-controls="filterArea">
+            Filter Area
+        </button>
+        <div class="collapse" id="filterForm">
+            <div class="card card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="code" class="control-label">Code</label>
+                                <input id="code" name="code" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="name" class="control-label">Name</label>
+                                <input id="name" name="name" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="author" class="control-label">Author</label>
+                                <input id="author" name="author" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="isbn" class="control-label">ISBN</label>
+                            <input id="isbn" name="isbn" class="form-control" disabled />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="releaseYear" class="control-label">Release Year</label>
+                            <input id="releaseYear" name="releaseYear" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group float-right">
+                            <label class="control-label mt-4">&nbsp;</label>
+                            <input type="submit" id="submit" value="Filter" class="btn btn-info mt-4"/>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </p>
     <div id="entryPoint"></div>
 </div>
 

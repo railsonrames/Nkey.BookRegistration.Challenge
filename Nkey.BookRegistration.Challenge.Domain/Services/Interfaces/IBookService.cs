@@ -8,6 +8,7 @@ namespace Nkey.BookRegistration.Challenge.Domain.Services.Interfaces
     {
         List<Book> BookList();
         List<Book> FilteredBooks(BookFilter filter);
+        Book GetById(Guid id);
         void AddNewBook(Book book);
         void UpdateBook(Book book);
         void RemoveBook(Guid id);

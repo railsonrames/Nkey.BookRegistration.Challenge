@@ -39,6 +39,18 @@ namespace Nkey.BookRegistration.Challenge.Domain.Services
             }
         }
 
+        public Book GetById(Guid id)
+        {
+            try
+            {
+                return _repository.GetById(id);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public void AddNewBook(Book book)
         {
             try

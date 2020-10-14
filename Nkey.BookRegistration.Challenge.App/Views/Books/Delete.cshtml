@@ -1,32 +1,32 @@
-﻿@{ ViewData["Title"] = "New Book Registry"; }
+﻿@{ ViewData["Title"] = "Delete Book Registry"; }
 
 <div class="jumbotron">
-    <h1 class="display-4">New Book Registry</h1>
-    <p class="lead">Cadastre um novo registro de livro.</p>
+    <h1 class="display-4">Delete Book Registry</h1>
+    <p class="lead">Delete o livro.</p>
     <div id="entryPoint"></div>
     <form>
         <div class="form-group">
             <label for="code" class="control-label">Code</label>
-            <input id="code" name="code" class="form-control" />
+            <input id="code" name="code" class="form-control" disabled />
         </div>
         <div class="form-group">
             <label for="name" class="control-label">Name</label>
-            <input id="name" name="name" class="form-control" />
+            <input id="name" name="name" class="form-control" disabled />
         </div>
         <div class="form-group">
             <label for="author" class="control-label">Author</label>
-            <input id="author" name="author" class="form-control" />
+            <input id="author" name="author" class="form-control" disabled />
         </div>
         <div class="form-group">
             <label for="isbn" class="control-label">ISBN</label>
-            <input id="isbn" name="isbn" class="form-control" />
+            <input id="isbn" name="isbn" class="form-control" disabled />
         </div>
         <div class="form-group">
             <label for="releaseYear" class="control-label">Release Year</label>
-            <input id="releaseYear" name="releaseYear" class="form-control" />
+            <input id="releaseYear" name="releaseYear" class="form-control" disabled />
         </div>
         <div class="form-group">
-            <input type="submit" id="submit" value="Save" class="btn btn-primary" />
+            <input type="submit" id="submit" value="Delete" class="btn btn-danger" />
         </div>
     </form>
 </div>
@@ -35,5 +35,6 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/Books/new.js"></script>
+    <script src="~/js/Books/byid.js"></script>
+    <script src="~/js/Books/delete.js"></script>
 }

@@ -10,19 +10,18 @@
         };
         console.info(JSON.stringify(bookObject));
         $.ajax({
-            async: true,
-            type: "POST",
+            type: "PUT",
             url: "http://localhost:5000/books",
             data: JSON.stringify(bookObject),
             contentType: "application/json; charset=utf-8",
             dataType: "JSON",
             complete: function (response) {
                 switch (response.status) {
-                case 201:
-                    toastr.success(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
+                case 204:
+                        toastr.success("Livro atualizado com sucesso.", response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
                         //window.location.href = "http://localhost:9000/Books";
                         break;
-                case 400:
+                case 404:
                     toastr.error(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
                     break;
                 default:

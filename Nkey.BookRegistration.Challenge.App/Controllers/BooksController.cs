@@ -17,5 +17,15 @@ namespace Nkey.BookRegistration.Challenge.App.Controllers
         {
             return View();
         }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
     }
 }

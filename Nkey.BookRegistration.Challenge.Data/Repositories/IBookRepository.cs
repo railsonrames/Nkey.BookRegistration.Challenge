@@ -8,6 +8,7 @@ namespace Nkey.BookRegistration.Challenge.Data.Repositories
     {
         List<Book> GetAll();
         List<Book> GetByFilter(BookFilter filter);
+        Book GetById(Guid id);
         void Save(Book book);
         void Update(Book book);
         void Delete(Guid id);
