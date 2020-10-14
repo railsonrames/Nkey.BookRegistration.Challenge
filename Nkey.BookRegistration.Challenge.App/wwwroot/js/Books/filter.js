@@ -8,7 +8,6 @@
             isbn: $("#isbn").val(),
             releaseYear: parseInt($("#releaseYear").val())
         };
-        console.info(JSON.stringify(bookObject));
         $.ajax({
             async: true,
             type: "POST",
@@ -17,7 +16,6 @@
             contentType: "application/json; charset=utf-8",
             dataType: "JSON",
             complete: function (response) {
-                console.info(response.responseJSON);
                 switch (response.status) {
                 case 200:
                     $("#entryPoint").html(setDataTable(response.responseJSON));

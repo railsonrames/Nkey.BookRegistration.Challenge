@@ -8,7 +8,6 @@
             isbn: $("#isbn").val(),
             releaseYear: parseInt($("#releaseYear").val())
         };
-        console.info(JSON.stringify(bookObject));
         $.ajax({
             async: true,
             type: "POST",
