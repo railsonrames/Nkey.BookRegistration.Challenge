@@ -26,16 +26,14 @@ namespace Nkey.BookRegistration.Challenge.Data.Repositories
 
         public List<Book> GetByFilter(BookFilter filter)
         {
-            return _context.Books
-                .Where(x =>
-                    (x.Id == filter.Id) ||
-                    (x.Code == filter.Code) ||
-                    (x.Name.Contains(filter.Name)) ||
-                    (x.Author.Contains(filter.Author)) ||
-                    (x.Isbn == filter.Isbn) ||
-                    (x.ReleaseYear == filter.ReleaseYear)
-                ).OrderBy(x => x.Name)
-                .ToList();
+            var query = _context.Books.AsQueryable();
+            if (filter.Id != null) query = query.Where(x => x.Id == filter.Id);
+            if (filter.Code != null && filter.Code> 0) query = query.Where(x => x.Code == filter.Code);
+            if (!string.IsNullOrEmpty(filter.Name)) query = query.Where(x => x.Name.Contains(filter.Name));
+            if (!string.IsNullOrEmpty(filter.Author)) query = query.Where(x => x.Author.Contains(filter.Author));
+            if (!string.IsNullOrEmpty(filter.Isbn)) query = query.Where(x => x.Isbn.Contains(filter.Isbn));
+            if (filter.ReleaseYear != null && filter.ReleaseYear> 0) query = query.Where(x => x.ReleaseYear == filter.ReleaseYear);
+            return query.OrderBy(x => x.Name).ToList();
         }
 
         public Book GetById(Guid id)

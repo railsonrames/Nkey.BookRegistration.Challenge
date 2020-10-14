@@ -11,10 +11,10 @@
                 complete: function(response) {
                     switch (response.status) {
                     case 204:
-                        toastr.success("Livro excluído com sucesso.",
-                            response.status + " " + response.statusText,
-                            { timeOut: 3000, "closeButton": true });
-                        //window.location.href = "http://localhost:9000/Books";
+                        toastr.success("Livro excluído com sucesso.", response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
+                        setTimeout(function() {
+                            window.location.href = "http://localhost:9000/Books";
+                        }, 3000);
                         break;
                     case 404:
                         toastr.error(response.responseJSON,

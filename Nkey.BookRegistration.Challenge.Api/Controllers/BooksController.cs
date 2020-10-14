@@ -34,7 +34,7 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
             return Ok(list);
         }
 
-        [HttpGet("filter")]
+        [HttpPost("filter")]
         public ActionResult<IEnumerable<Book>> GetByFilter(BookFilter filter)
         {
             List<Book> list;

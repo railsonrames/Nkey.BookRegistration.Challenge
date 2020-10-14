@@ -18,9 +18,11 @@
             complete: function (response) {
                 switch (response.status) {
                 case 204:
-                        toastr.success("Livro atualizado com sucesso.", response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
-                        //window.location.href = "http://localhost:9000/Books";
-                        break;
+                    toastr.success("Livro atualizado com sucesso.", response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
+                    setTimeout(function () {
+                        window.location.href = "http://localhost:9000/Books";
+                    }, 3000);
+                    break;
                 case 404:
                     toastr.error(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
                     break;

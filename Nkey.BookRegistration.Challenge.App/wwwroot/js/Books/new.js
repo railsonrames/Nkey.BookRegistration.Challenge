@@ -20,8 +20,10 @@
                 switch (response.status) {
                 case 201:
                     toastr.success(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
-                        //window.location.href = "http://localhost:9000/Books";
-                        break;
+                    setTimeout(function () {
+                        window.location.href = "http://localhost:9000/Books";
+                    }, 3000);
+                    break;
                 case 400:
                     toastr.error(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
                     break;

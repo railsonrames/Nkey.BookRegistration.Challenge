@@ -30,26 +30,26 @@
                             </div>
                         </div>
                     </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="isbn" class="control-label">ISBN</label>
-                            <input id="isbn" name="isbn" class="form-control" disabled />
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="isbn" class="control-label">ISBN</label>
+                                <input id="isbn" name="isbn" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="releaseYear" class="control-label">Release Year</label>
+                                <input id="releaseYear" name="releaseYear" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="form-group float-right">
+                                <label class="control-label mt-4">&nbsp;</label>
+                                <input type="submit" id="submit" value="Filter" class="btn btn-info mt-4" />
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="releaseYear" class="control-label">Release Year</label>
-                            <input id="releaseYear" name="releaseYear" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="form-group float-right">
-                            <label class="control-label mt-4">&nbsp;</label>
-                            <input type="submit" id="submit" value="Filter" class="btn btn-info mt-4"/>
-                        </div>
-                    </div>
-                </div>
                 </form>
             </div>
         </div>
@@ -59,4 +59,5 @@
 
 @section Scripts {
     <script src="~/js/Books/list.js"></script>
+    <script src="~/js/Books/filter.js"></script>
 }
