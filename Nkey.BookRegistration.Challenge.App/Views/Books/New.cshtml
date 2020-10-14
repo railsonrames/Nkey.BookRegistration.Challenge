@@ -1,43 +1,36 @@
-﻿@model Nkey.BookRegistration.Challenge.App.Models.BookModel
-
-@{ ViewData["Title"] = "New Books Registry"; }
+﻿@{ ViewData["Title"] = "New Books Registry"; }
 
 <div class="jumbotron">
     <h1 class="display-4">New Books Registry</h1>
     <p class="lead">Cadastre um novo registro de livro.</p>
+    <div id="entryPoint"></div>
     <form>
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Code" class="control-label"></label>
-            <input asp-for="Code" class="form-control" />
-            <span asp-validation-for="Code" class="text-danger"></span>
+            <label for="code" class="control-label">Code</label>
+            <input id="code" name="code" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Name" class="control-label"></label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <label for="name" class="control-label">Name</label>
+            <input id="name" name="name" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Author" class="control-label"></label>
-            <input asp-for="Author" class="form-control" />
-            <span asp-validation-for="Author" class="text-danger"></span>
+            <label for="author" class="control-label">Author</label>
+            <input id="author" name="author" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Isbn" class="control-label"></label>
-            <input asp-for="Isbn" class="form-control" />
-            <span asp-validation-for="Isbn" class="text-danger"></span>
+            <label for="isbn" class="control-label">ISBN</label>
+            <input id="isbn" name="isbn" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="ReleaseYear" class="control-label"></label>
-            <input asp-for="ReleaseYear" class="form-control" />
-            <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+            <label for="releaseYear" class="control-label">Release Year</label>
+            <input id="releaseYear" name="releaseYear" class="form-control" />
         </div>
         <div class="form-group">
             <input type="submit" id="submit" value="Save" class="btn btn-primary" />
         </div>
     </form>
 </div>
-<div id="entryPoint"></div>
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

@@ -26,7 +26,7 @@ namespace Nkey.BookRegistration.Challenge.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
-                options.AddPolicy(AllowedSpecificOrigins, builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+                options.AddPolicy(AllowedSpecificOrigins, builder => builder.WithOrigins(SpecifcUrlOriginsList).AllowAnyHeader().AllowAnyMethod()));
             services.AddControllers();
             services.AddDbContext<BookRegistrationContext>();
             services.AddScoped<IBookRepository, BookRepository>();
