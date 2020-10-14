@@ -52,7 +52,7 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save([FromBody]Book book)
+        public JsonResult Save([FromBody]Book book)
         {
             try
             {
@@ -60,10 +60,16 @@ namespace Nkey.BookRegistration.Challenge.Api.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(400, e.Message);
+                return new JsonResult(e.Message)
+                {
+                    StatusCode = 400
+                };
             }
 
-            return StatusCode(201, "Created.");
+            return new JsonResult("Livro cadastrado com sucesso.")
+            {
+                StatusCode = 201
+            };
         }
 
         [HttpPut]

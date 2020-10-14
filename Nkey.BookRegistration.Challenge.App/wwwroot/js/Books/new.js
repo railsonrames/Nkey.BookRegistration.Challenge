@@ -16,11 +16,17 @@
             data: JSON.stringify(bookObject),
             contentType: "application/json; charset=utf-8",
             dataType: "JSON",
-            success: function(response) {
-                toastr.success(response.message, 'Success Alert', { timeOut: 3000, "closeButton": true });
-            },
-            error: function() {
-                toastr.error('Alguma treta happened.', 'Error Alert', { timeOut: 3000, "closeButton": true });
+            complete: function (response) {
+                switch (response.status) {
+                case 201:
+                    toastr.success(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
+                    break;
+                case 400:
+                    toastr.error(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
+                    break;
+                default:
+                    toastr.info(response.responseJSON, response.status + " " + response.statusText, { timeOut: 3000, "closeButton": true });
+                }
             }
         });
     });
